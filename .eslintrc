@@ -1,0 +1,26 @@
+{
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2017,
+      "ecmaFeatures": {
+          "jsx": true,
+          "experimentalObjectRestSpread": true
+      },
+    },
+    "rules": {
+        "semi": ["off", "always"],
+        "quotes": ["error", "single"],
+        "no-console": "off",
+        "no-inline-comments": "off",
+        "no-undef": "off",
+        "no-unused-vars": "warn"
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true
+    }
+}
