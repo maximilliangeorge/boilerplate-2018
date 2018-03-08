@@ -37,7 +37,8 @@ All set! Run `gulp` to start developing.
 Basic HTML5 setup with the following:
 - jQuery
 - Vue.js
-- Gulp build process (Sass, BrowserSync, script concatenation and minification)
+- Gulp build process (Sass, ES6, BrowserSync, script concatenation and minification)
+- JS linting
 
 ### Wordpress
 
