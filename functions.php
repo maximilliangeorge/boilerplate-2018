@@ -7,7 +7,7 @@ function load_assets() {
 	wp_deregister_script('jquery');
 
 	wp_register_script('vendor.js', get_stylesheet_directory_uri() . '/build/js/vendor.js?' . uniqid());
-	wp_register_script('script.js', get_stylesheet_directory_uri() . '/build/js/script.js?' . uniqid(), array('vendor'));
+	wp_register_script('script.js', get_stylesheet_directory_uri() . '/build/js/script.js?' . uniqid(), array('vendor.js'));
 	wp_register_style('main.css', get_stylesheet_directory_uri() . '/build/css/main.css?' . uniqid(), false);
 
 	wp_enqueue_script('vendor.js');
