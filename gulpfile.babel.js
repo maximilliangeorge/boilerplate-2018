@@ -17,17 +17,17 @@ gulp.task('serve', ['sass'], function() {
 
 		browserSync.init({
 				server: {
-						baseDir: './'
+						proxy: 'localhost:8888',
+						ws: true
 				}
 		});
 
     gulp.watch('./src/sass/**/*.scss', ['sass'])
-    gulp.watch(['./src/js/*.js', '!./js/vendor.js'], ['script-js'])
+    gulp.watch(['./src/js/*.js', './js/vendor.js'], ['script-js'])
 		gulp.watch('./src/js/vendor.js', ['vendor-js'])
-		gulp.watch('./build/js/vendor.js').on('change', browserSync.reload)
-    gulp.watch('./build/js/script.js').on('change', browserSync.reload)
+		gulp.watch('./public/js/vendor.js').on('change', browserSync.reload)
+    gulp.watch('./public/js/script.js').on('change', browserSync.reload)
     gulp.watch('./*.html').on('change', browserSync.reload)
-		gulp.watch('./*.php').on('change', browserSync.reload)
     gulp.watch('./**/*.html').on('change', browserSync.reload)
 
 })
@@ -42,7 +42,7 @@ let sassOptions = {
 gulp.task('sass', function(callback) {
 
 	pump([
-		gulp.src('./src/sass/**/*.scss'),
+		gulp.src('./public/sass/**/*.scss'),
 		sourcemaps.init(),
 		sass(sassOptions).on('error', sass.logError),
 		autoprefixer(),
@@ -51,7 +51,7 @@ gulp.task('sass', function(callback) {
 			console.log(details.name + ': ' + details.stats.minifiedSize)
 		}),
 		sourcemaps.write(),
-		gulp.dest('./build/css'),
+		gulp.dest('./public/css'),
 		browserSync.stream()
 	], callback)
 
@@ -79,7 +79,7 @@ gulp.task('script-js', function(callback) {
 			}
 		}),
 		sourcemaps.write('./'),
-		gulp.dest('./build/js')
+		gulp.dest('./public/js')
 	], callback)
 
 })
@@ -104,7 +104,7 @@ gulp.task('vendor-js', function(callback) {
 			}
 		}),
 		sourcemaps.write('./'),
-		gulp.dest('./build/js')
+		gulp.dest('./public/js')
 	], callback)
 
 })
