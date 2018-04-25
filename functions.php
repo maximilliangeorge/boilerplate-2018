@@ -40,7 +40,8 @@ add_action('rest_api_init', 'setup_rest_routes');
 
 // Hide unnecessary admin items
 
-function remove_menus(){
+function remove_menus() {
+  if (is_admin()) return;
   // remove_menu_page( 'index.php' );                  //Dashboard
   // remove_menu_page( 'jetpack' );                    //Jetpack* 
   // remove_menu_page( 'edit.php' );                   //Posts
