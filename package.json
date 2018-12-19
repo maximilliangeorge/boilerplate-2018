@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "rsync -zvr ./ --delete --progress --exclude node_modules user@www.domain.com:/path"
+    "deploy": "rsync -zvr ./ --delete --progress --exclude node_modules root@reprecdigit.se:/var/www/html/www.reprecdigit.se"
   },
   "author": "",
   "license": "ISC",
-	"dependencies": {
+  "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -43,6 +43,7 @@
     "pump": "^1.0.2",
     "slick-carousel": "^1.8.1",
     "stickyfill": "^1.1.1",
+    "typewriter-effect": "^2.4.6",
     "uglify-es": "^3.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-fs": "^2.4.4",

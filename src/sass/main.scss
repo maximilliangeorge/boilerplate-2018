@@ -1,5 +1,90 @@
-@import 'reset';
+@import "reset";
 
-body {
-	background-color: lime;
+$black: #1b1b1b;
+$white: #fff;
+
+$base-size: 24px;
+$mobile-base-size: 20px;
+$xl-base-size: 28px;
+$base-line-height: 1.35rem;
+$base-letter-spacing: 0.15px;
+
+@font-face {
+	font-family: "Favorit Light";
+	src: url("/static/fonts/Favorit_Light.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Favorit Light Lining";
+	src: url("/static/fonts/Favorit-Light_Lining.otf");
+	font-weight: normal;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "Favorit Light Italic";
+	src: url("/static/fonts/Favorit_Light-Italic.otf");
+}
+
+@font-face {
+	font-family: "Favorit Medium";
+	src: url("/static/fonts/Favorit_Medium.otf");
+}
+
+body,
+html {
+	font-family: "Favorit Light";
+	font-size: $base-size;
+	letter-spacing: $base-letter-spacing;
+	line-height: $base-line-height;
+	color: $white;
+	background-color: $black;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	height: 100vh;
+}
+
+ul {
+	list-style: none;
+}
+
+.pixel-intro {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 5000;
+	background-color: #fff;
+	pointer-events: none;
+	background-image: url(../../static/gif/orb.gif);
+	-webkit-transform: translate3d(0,0);
+	transform: translate3d(0,0);
+	background-size: cover;
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+	mix-blend-mode: difference;
+	opacity: .6;
+	-webkit-transition: opacity .75s;
+	transition: opacity .75s;
+}
+
+.header {
+	margin-bottom: 1rem;
+}
+
+.main {
+	padding: 1rem;
+}
+
+.nav {
+
+	a:hover span {
+		display: none;
+	}
+
 }
