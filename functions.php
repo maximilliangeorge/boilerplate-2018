@@ -1,5 +1,8 @@
 <?php
 
+// Disable Gutenberg
+add_filter('use_block_editor_for_post', '__return_false');
+
 // Assets
 
 function load_assets() {
