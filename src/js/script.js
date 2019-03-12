@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	document.querySelector('#anchor-link').addEventListener('click', (e) => {
+
+		e.preventDefault()
+
+		window.scrollTo({
+			top: window.innerHeight / 2,
+			left: 0,
+			behavior: 'smooth'
+		})
+
+	})
+
 	new Typewriter('#representations', {
 		strings: [''],
 		cursor: null,

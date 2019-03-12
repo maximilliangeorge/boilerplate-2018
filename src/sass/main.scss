@@ -51,7 +51,7 @@ ul {
 }
 
 .pixel-intro {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -71,20 +71,192 @@ ul {
 	opacity: .6;
 	-webkit-transition: opacity .75s;
 	transition: opacity .75s;
+	overflow: hidden;
 }
 
 .header {
 	margin-bottom: 1rem;
 }
 
-.main {
-	padding: 1rem;
-}
-
 .nav {
 
 	a:hover span {
 		display: none;
+	}
+
+}
+
+.main-body {
+	background-color: white;
+	color: #6A6A6A;
+}
+
+.main-top {
+	padding: 1rem;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+.main-cta {
+	max-width: 27rem;
+	width: calc(100% - 2rem);
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	p {
+		flex-grow: 1;
+		text-align: center;
+	}
+
+	@media screen and (max-width: 720px) {
+		//justify-content: left;
+		align-items: flex-end;
+
+		p {
+			text-align: left;
+			display: block;
+			flex-grow: 0;
+			//margin-right: 2rem;
+		}
+
+		span:first-child {
+			display: none;
+		}
+	}
+
+}
+
+.xs-line-break {
+	@media screen and (min-width: 680px) {
+		display: none;
+	}
+}
+
+.main-column {
+	max-width: 29rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.75rem 1rem;
+	box-sizing: border-box;
+
+	p {
+		margin-bottom: 1.35rem;
+	}
+
+}
+
+.footer {
+	text-align: center;
+	width: 100%;
+	position: relative;
+	//height: 30vw;
+	background-color: #000;
+	font-size: .62rem;
+	line-height: 1.4em;
+	letter-spacing: .025em;
+	padding-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+
+	%footer-children {
+		width: 33rem;
+		max-width: calc(100vw - 4.8rem);
+		margin-left: auto;
+		margin-right: auto;
+		border-bottom: 1px solid #6A6A6A;
+		padding: 1rem;
+		//margin: 0 1rem;
+
+		p {
+			max-width: 29rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
+	.footer-financing-statement {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-headline,
+	.footer-financing,
+	.footer-universities,
+	.footer-design {
+		@extend %footer-children;
+	}
+
+	%logo {
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.footer-financing-logo {
+		@extend %logo;
+		width: 100%;
+		height: 1.65rem;
+		//border: 1px solid red;
+		margin-bottom: .9rem;
+	}
+
+	.footer-universities {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-university-gbg {
+		@extend %logo;
+		height: 1.75rem;
+		width: 3rem;
+		margin: 0 5vw;
+
+		@media screen and (min-width: 1190px) {
+			margin: 0 60px;
+		}
+
+	}
+
+	.footer-universities-lidkoping {
+		@extend %logo;
+		height: 1.75rem;
+		width: 3rem;
+		margin: 0 5vw;
+
+		@media screen and (min-width: 1190px) {
+			margin: 0 60px;
+		}
+
+	}
+
+	.footer-design {
+		border-bottom: 1px solid #6A6A6A;
+		padding-bottom: 0.25rem;
+
+		p {
+			margin-bottom: .85rem;
+		}
+
+	}
+
+	.footer-headline {
+		text-transform: uppercase;
+		letter-spacing: .04em;
+
+		h1 {
+			font-weight: normal;
+			line-height: 1em;
+			margin-bottom: -.3em;
+		}
+
 	}
 
 }
